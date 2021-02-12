@@ -1,5 +1,9 @@
 # Astro Unsupervised Deep Clustering
 
+
+[![DOI](https://zenodo.org/badge/338208092.svg)](https://zenodo.org/badge/latestdoi/338208092)
+
+
 We have developed a method that maps large astronomical images onto a two-dimensional map and clusters them. A combination of various state-of-the-art machine learning (ML) algorithms is used to develop a fully unsupervised image quality assessment and clustering system.
 
 # Methods and Training Procedure
