@@ -8,13 +8,13 @@ We have developed a method that maps large astronomical images onto a two-dimens
 
 # Methods and Training Procedure
 
-Our labeling pipeline is shown in the graph below. It starts with a data pre-processing step where individual image objects are identified in a large astronomical image and converted to smaller pixel images. This data is then fed to a deep convolutional autoencoder jointly trained with a self-organizing map (SOM). This combined method is known as a deep embedded SOM (DESOM) [[1]](#1). A significant output of this part (DESOM-1) is a visual representation of a $25\times25$ map of prototype vectors. It is a good representation of objects in the training set. This presentation is extremely useful to visually assess and identify the types of objects present in the dataset.
+Our labeling pipeline is shown in the graph below. It starts with a data pre-processing step where individual image objects are identified in a large astronomical image and converted to smaller pixel images. This data is then fed to a deep convolutional autoencoder jointly trained with a self-organizing map (SOM). This combined method is known as a deep embedded SOM (DESOM) [[1]](#1). A significant output of this part (DESOM-1) is a visual representation of a 25x25 map of prototype vectors. It is a good representation of objects in the training set. This presentation is extremely useful to visually assess and identify the types of objects present in the dataset.
 
-<img src="images/pipeline.png" width="65%">
+<img src="images/pipeline.png" width="75%">
 
 Next, for a selected exposure, the output of DESOM-1 can be flattened to generate a histo-vector that contains 625 components. In other words, we convert image information to informative tabular data. This step is an excellent deep dimensionality reduction step, as well as recognizing useful patterns in each exposure. Such a matrix will be fed to another deep SOM (DESOM-2) to group the histo-vectors.
 
-The generated histo-vectors are first normalized and then used to train DESOM-2. The result is a map of the size of $20\times20$. The end goal is that, images in one cell on DESOM-2 map should resemble each other.
+The generated histo-vectors are first normalized and then used to train DESOM-2. The result is a map of the size of 20x20. The end goal is that, images in one cell on DESOM-2 map should resemble each other.
 
 
 # How to Use This Repository
@@ -35,6 +35,10 @@ In order to run the initial preprocessing, run `MakeSmallCutouts.ipynb` notebook
 The graph below shows nine randomly selected images from a cell on the DESOM-2 map. This example shows that members of this cell have a bad focus nature.
 
 <img src="images/example_BadFocus.png" width="75%">
+
+As another example, the graph below shows nine randomly selected from another cell on DESOM-2 map. The images in this resemble each other, as expected, and they all have background problems.
+
+<img src="images/example_BGP.png" width="75%">
 
 
 
