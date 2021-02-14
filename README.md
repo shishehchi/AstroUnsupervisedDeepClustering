@@ -19,7 +19,7 @@ The generated histo-vectors are first normalized and then used to train DESOM-2.
 
 # How to Use This Repository
 
-The goal of this repository is to present a sample data set to test our pipeline. 150 exposures of various qualities are provided as a small test data set. The trained DESOM-1 and DESOM-2 model structure and weights are prvided in `data` folder. To run the test, simply open `pipeline.ipynb` and follow the steps. Additional details about each part of the pipeline is also provided in the notebook file.
+The goal of this repository is to present a sample data set to test our pipeline. 150 exposures of various qualities are provided as a small test data set. Please click [here](https://drive.google.com/file/d/1na5H25IuvtFvH7g5gw3vkS0DZyUziCl3/view?usp=sharing) to download the zipped dataset. Extract `small_test_set.npy` and add it to the `data` folder in your repository. The trained DESOM-1 and DESOM-2 model structure and weights are prvided in `data` folder. To run the test, simply open `pipeline.ipynb` and follow the steps. Additional details about each part of the pipeline is also provided in the notebook file.
 
 The pipeline notebook file imports and sets up the trained DESOM-1 and DESOM-2 models. The map of prototype vectors from DESOM-1 is recunstructed. Then, a histo-vector is created for each test sample. Eventually, the location of the input data on the DESOM-2 map is determined by passing the data through the trained DESOM-2 model.
 
